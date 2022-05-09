@@ -14,7 +14,17 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@torn": ["packages/lib/torn-react/src/index.ts"],
+      "@torn/atom": ["packages/lib/atom/src/index.ts"],
+      "@torn/molecule": ["packages/lib/molecule/src/index.ts"],
+      "@torn/organism": ["packages/lib/organism/src/index.ts"],
+      "@torn/template": ["packages/lib/template/src/index.ts"],
+      "@torn/theme": ["packages/lib/theme/src/index.ts"],
+      "@torn/ui-next": ["packages/lib/ui-next/src/index.ts"],
+      "@torn/ui-react": ["packages/lib/ui-react/src/index.ts"],
+      "@torn/util": ["packages/lib/util/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

@@ -1,4 +1,18 @@
 {
   "version": 2,
-  "projects": {}
+  "projects": {
+    "app-torn-next": "packages/app/torn-next",
+    "app-torn-next-city": "packages/app/torn-next-city",
+    "app-torn-next-gym": "packages/app/torn-next-gym",
+    "app-torn-next-home": "packages/app/torn-next-home",
+    "app-torn-next-job": "packages/app/torn-next-job",
+    "app-torn-spa": "packages/app/torn-spa",
+    "lib-atom": "packages/lib/atom",
+    "lib-atom-e2e": "packages/lib-atom-e2e",
+    "lib-molecule": "packages/lib/molecule",
+    "lib-organism": "packages/lib/organism",
+    "lib-template": "packages/lib/template",
+    "lib-theme": "packages/lib/theme",
+    "lib-util": "packages/lib/util"
+  }
 }

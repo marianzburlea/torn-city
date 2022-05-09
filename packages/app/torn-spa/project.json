@@ -1,0 +1,84 @@
+{
+  "root": "packages/app/torn-spa",
+  "sourceRoot": "packages/app/torn-spa/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "swc",
+        "outputPath": "dist/packages/app/torn-spa",
+        "index": "packages/app/torn-spa/src/index.html",
+        "baseHref": "/",
+        "main": "packages/app/torn-spa/src/main.tsx",
+        "polyfills": "packages/app/torn-spa/src/polyfills.ts",
+        "tsConfig": "packages/app/torn-spa/tsconfig.app.json",
+        "assets": [
+          "packages/app/torn-spa/src/favicon.ico",
+          "packages/app/torn-spa/src/assets"
+        ],
+        "styles": [],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "packages/app/torn-spa/src/environments/environment.ts",
+              "with": "packages/app/torn-spa/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "app-torn-spa:build",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "app-torn-spa:build:development",
+          "port": 6200
+        },
+        "production": {
+          "buildTarget": "app-torn-spa:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/app/torn-spa/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/app/torn-spa"],
+      "options": {
+        "jestConfig": "packages/app/torn-spa/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["type:app"]
+}

@@ -1,0 +1,28 @@
+{
+  "root": "packages/lib-atom-e2e",
+  "sourceRoot": "packages/lib-atom-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "packages/lib-atom-e2e/cypress.json",
+        "devServerTarget": "lib-atom:storybook"
+      },
+      "configurations": {
+        "ci": {
+          "devServerTarget": "lib-atom:storybook:ci"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/lib-atom-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["lib-atom"]
+}

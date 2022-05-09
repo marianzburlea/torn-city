@@ -1,0 +1,61 @@
+{
+  "root": "packages/app/torn-next-city",
+  "sourceRoot": "packages/app/torn-next-city",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/next:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "root": "packages/app/torn-next-city",
+        "outputPath": "dist/packages/app/torn-next-city"
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/next:server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "app-torn-next-city:build",
+        "dev": true,
+        "port": 6410
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "app-torn-next-city:build:development",
+          "dev": true
+        },
+        "production": {
+          "buildTarget": "app-torn-next-city:build:production",
+          "dev": false
+        }
+      }
+    },
+    "export": {
+      "executor": "@nrwl/next:export",
+      "options": {
+        "buildTarget": "app-torn-next-city:build:production"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/app/torn-next-city"],
+      "options": {
+        "jestConfig": "packages/app/torn-next-city/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/app/torn-next-city/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  },
+  "tags": ["type:app"]
+}

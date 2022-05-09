@@ -1,0 +1,43 @@
+{
+  "root": "packages/lib/organism",
+  "sourceRoot": "packages/lib/organism/src",
+  "projectType": "library",
+  "tags": ["type:organism"],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/lib/organism",
+        "tsConfig": "packages/lib/organism/tsconfig.lib.json",
+        "project": "packages/lib/organism/package.json",
+        "entryFile": "packages/lib/organism/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "packages/lib/organism/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/lib/organism/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/lib/organism"],
+      "options": {
+        "jestConfig": "packages/lib/organism/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

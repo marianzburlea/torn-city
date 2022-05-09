@@ -1,0 +1,61 @@
+{
+  "root": "packages/app/torn-next-gym",
+  "sourceRoot": "packages/app/torn-next-gym",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/next:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "root": "packages/app/torn-next-gym",
+        "outputPath": "dist/packages/app/torn-next-gym"
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/next:server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "app-torn-next-gym:build",
+        "dev": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "app-torn-next-gym:build:development",
+          "dev": true,
+          "port": 6430
+        },
+        "production": {
+          "buildTarget": "app-torn-next-gym:build:production",
+          "dev": false
+        }
+      }
+    },
+    "export": {
+      "executor": "@nrwl/next:export",
+      "options": {
+        "buildTarget": "app-torn-next-gym:build:production"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/app/torn-next-gym"],
+      "options": {
+        "jestConfig": "packages/app/torn-next-gym/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/app/torn-next-gym/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  },
+  "tags": ["type:app"]
+}
