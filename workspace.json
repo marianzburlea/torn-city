@@ -7,6 +7,7 @@
     "app-torn-next-home": "packages/app/torn-next-home",
     "app-torn-next-job": "packages/app/torn-next-job",
     "app-torn-spa": "packages/app/torn-spa",
+    "app-torn-spa-js": "packages/app/torn-spa-js",
     "lib-atom": "packages/lib/atom",
     "lib-atom-e2e": "packages/lib-atom-e2e",
     "lib-molecule": "packages/lib/molecule",

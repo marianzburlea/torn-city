@@ -1,5 +1,6 @@
 import { Button } from '@torn/atom';
-import { log } from '@torn/util';
+import { Nav } from '@torn/molecule';
+import { log, topMenu } from '@torn/util';
 
 const App = () => {
   const message = 'Test';
@@ -9,7 +10,9 @@ const App = () => {
 
   return (
     <div>
-      <Button onClick={test}>Click me</Button>
+      <div>
+        <Nav list={topMenu} />
+      </div>
     </div>
   );
 };

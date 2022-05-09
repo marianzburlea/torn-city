@@ -1,5 +1,6 @@
 import { Button } from '@torn/atom';
-import { log } from '@torn/util';
+import { Nav } from '@torn/molecule';
+import { log, topMenu } from '@torn/util';
 import Head from 'next/head';
 
 const TornNextJob = () => {
@@ -21,6 +22,10 @@ const TornNextJob = () => {
         <div>
           <Button onClick={test}>{message}</Button>
         </div>
+      </div>
+
+      <div>
+        <Nav list={topMenu} />
       </div>
     </>
   );

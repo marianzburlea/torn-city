@@ -1,5 +1,3 @@
-import { ReactNode } from 'react';
-
 type Icon =
   | ''
   | 'menu'
@@ -38,35 +36,17 @@ type Icon =
   | 'drawer'
   | 'home';
 
-export const IconSizeMap = {
-  xs: 12,
-  sm: 16,
-  md: 20,
-  lg: 24,
-  xl: 28,
-  xxl: 32,
-};
-
-export interface Button {
-  variant?: 'primary' | 'secondary' | 'warning' | 'danger' | 'default' | 'info';
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+interface LinkButton {
+  icon?: Icon;
   label?: string;
-  children?: ReactNode;
-  onClick?: () => void;
-  // theme?: any;
-  leadIcon?: boolean;
-  trailIcon?: boolean;
-  iconLead?: Icon;
-  iconTrail?: Icon;
-  fullWidth?: boolean;
+  message?: string;
+  variant?: 'primary' | 'secondary' | 'warning' | 'danger' | 'default' | 'info';
+}
+
+export interface Nav {
+  list?: LinkButton[];
 }
 
 export const defaultProps = {
-  variant: 'primary',
-  size: 'md',
-  label: '',
-  children: null,
-  iconLead: false,
-  iconTrail: false,
-  fullWidth: false,
+  list: [],
 };
