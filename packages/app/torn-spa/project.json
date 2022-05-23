@@ -51,7 +51,8 @@
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "app-torn-spa:build",
-        "hmr": true
+        "hmr": true,
+        "proxyConfig": "packages/app/torn-spa/proxy.conf.json"
       },
       "configurations": {
         "development": {

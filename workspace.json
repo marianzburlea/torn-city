@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
+    "api": "packages/app/api",
     "app-torn-next": "packages/app/torn-next",
     "app-torn-next-city": "packages/app/torn-next-city",
     "app-torn-next-gym": "packages/app/torn-next-gym",
